@@ -10,7 +10,7 @@ c = 299792458 # m/s, has been the defined value since like 1981
 f0 = 3630.78 # Jy for V == 0. Derived from S(Jy) = 1e23 * 10**-(AB+48.6)/2.5 = 10**(3.56-AB/2.5) = 10**((8.9-AB)/2.5). Not used directly, but is listed for comparison purposes. Sources: Oke&Gunn 1983, Fukugita et al 1996. This may implicitly be making Vega magnitude 0 in V, rather than eg: 0.03.
 
 area = 100/(σ*Teff**4) # area in m² of our 100 W emitter
-distance = np.linspace(100e3,1200e3,111) # 100 to 1200 km in 10 km steps
+distance = np.linspace(400e3,10000e3,961) # 400 to 10,000 km in 10 km steps
 
 def planck(λ,T):
 	B = (2*h*c**2/λ**5) / (np.exp(h*c/(λ*k*T)-1))
@@ -70,7 +70,7 @@ for band in Johnson:
 	ax[1,1].plot(distance*1e-3, ABmag, label=name)
 	ax[1,1].set_title("ABmag")
 ax[0,0].legend()
-ax[0,0].set_xlim(100,1200)
+ax[0,0].set_xlim(min(distance)*1e-3,max(distance)*1e-3)
 fig.set_size_inches(8, 6.8)
 fig.tight_layout()
 #fig.savefig("Filters_Johnson.png", dpi=100)
@@ -101,7 +101,7 @@ for band in SDSS:
 	bx[1,1].plot(distance*1e-3, ABmag, label=name)
 	bx[1,1].set_title("ABmag")
 bx[0,0].legend()
-bx[0,0].set_xlim(100,1200)
+bx[0,0].set_xlim(min(distance)*1e-3,max(distance)*1e-3)
 fig.set_size_inches(8, 6.8)
 fig.tight_layout()
 #fig.savefig("Filters_Sloan.png", dpi=100)
@@ -132,7 +132,7 @@ for band in twoMASS:
 	cx[1,1].plot(distance*1e-3, ABmag, label=name)
 	cx[1,1].set_title("ABmag")
 cx[0,0].legend()
-cx[0,0].set_xlim(100,1200)
+cx[0,0].set_xlim(min(distance)*1e-3,max(distance)*1e-3)
 fig.set_size_inches(8, 6.8)
 fig.tight_layout()
 #fig.savefig("Filters_2MASS.png", dpi=100)
