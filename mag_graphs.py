@@ -1,5 +1,4 @@
 import numpy as np
-import csv
 from matplotlib import pyplot as plt
 
 Teff = 3000 # K

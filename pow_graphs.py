@@ -1,5 +1,4 @@
 import numpy as np
-import csv
 from matplotlib import pyplot as plt
 
 Teff = 3000 # K
@@ -10,7 +9,6 @@ c = 299792458 # m/s, has been the defined value since like 1981
 f0 = 3630.78 # Jy for V == 0. Derived from S(Jy) = 1e23 * 10**-(AB+48.6)/2.5 = 10**(3.56-AB/2.5) = 10**((8.9-AB)/2.5). Not used directly, but is listed for comparison purposes. Sources: Oke&Gunn 1983, Fukugita et al 1996. This may implicitly be making Vega magnitude 0 in V, rather than 0.03, despite Oke & Gunn 1983.
 ABmag = 9.0 # nominal target magnitude
 
-area = 100/(σ*Teff**4) # area in m² of our 100 W emitter
 distance = np.linspace(400e3,10000e3,961) # 400 to 10,000 km in 10 km steps
 
 def planck(λ,T):
@@ -56,7 +54,7 @@ for band in Johnson:
 	xs = np.linspace(λeff-Δλ,λeff+Δλ,1000)
 	ys = [planck(x,Teff) for x in xs]
 	power = np.trapz(ys,xs)
-	wattage = [4*np.pi*d**2*Δν*σ*Teff**4/power * 10**(-0.4*(ABmag+48.6)) for d in distance]
+	wattage = [4*np.pi*d**2*Δν*σ*Teff**4/power * 1e-3* 10**(-0.4*(ABmag+48.6)) for d in distance]
 	ax[0].plot(distance*1e-3, wattage, label=name)
 	ax[0].set_title("Johnson UBVRI")
 ax[0].set_ylabel("Power (watts)")
@@ -70,7 +68,7 @@ for band in SDSS:
 	xs = np.linspace(λeff-Δλ,λeff+Δλ,1000)
 	ys = [planck(x,Teff) for x in xs]
 	power = np.trapz(ys,xs)
-	wattage = [4*np.pi*d**2*Δν*σ*Teff**4/power * 10**(-0.4*(ABmag+48.6)) for d in distance]
+	wattage = [4*np.pi*d**2*Δν*σ*Teff**4/power * 1e-3 * 10**(-0.4*(ABmag+48.6)) for d in distance]
 	ax[1].plot(distance*1e-3, wattage, label=name)
 	ax[1].set_title("SDSS ugriz")
 ax[1].legend()
@@ -83,7 +81,7 @@ for band in twoMASS:
 	xs = np.linspace(λeff-Δλ,λeff+Δλ,1000)
 	ys = [planck(x,Teff) for x in xs]
 	power = np.trapz(ys,xs)
-	wattage = [4*np.pi*d**2*Δν*σ*Teff**4/power * 10**(-0.4*(ABmag+48.6)) for d in distance]
+	wattage = [4*np.pi*d**2*Δν*σ*Teff**4/power * 1e-3 * 10**(-0.4*(ABmag+48.6)) for d in distance]
 	ax[2].plot(distance*1e-3, wattage, label=name)
 	ax[2].set_title("2MASS JHK")
 ax[2].legend(loc=4)
