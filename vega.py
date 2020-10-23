@@ -9,8 +9,8 @@ c = 299792458 # m/s, has been the defined value since like 1981
 σ = 5.67037442e-08 # W/m², per CODATA 2018
 f0 = 3630.78 # Jy for V == 0. Derived from S(Jy) = 1e23 * 10**-(AB+48.6)/2.5 = 10**(3.56-AB/2.5) = 10**((8.9-AB)/2.5). Not used directly, but is listed for comparison purposes. Sources: Oke&Gunn 1983, Fukugita et al 1996. This may implicitly be making Vega magnitude 0 in V, rather than eg: 0.03.
 
-area = 40.12*3.83/(σ*Teff**4) # area in m² of Vega, roughly (~40 L_sun)
-distance = 7.68*1495978700*648000/np.pi # distance of ~7.68 pc in m (au value via IAU 2012 and 2015 resolutions)
+area = 40.12*3.828e26/(σ*Teff**4) # area in m² of Vega, roughly (~40 L_sun)
+distance = 7.68*149597870700*648000/np.pi # distance of ~7.68 pc in m (au value via IAU 2012 and 2015 resolutions)
 
 def planck(λ,T):
 	B = (2*h*c**2/λ**5) / (np.exp(h*c/(λ*k*T)-1))
