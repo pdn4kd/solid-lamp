@@ -65,7 +65,7 @@ WFI = [["R062",0.620e-6,0.140e-6],["Z087",0.8685e-6,0.1085e-6],["Y106",1.0595e-6
 #LSST = 
 
 fivethirtytwo = [["V",5448e-10,840e-10],["R",6407e-10,1580e-10],["g'",4639e-10,1280e-10],["r'",6122e-10,1150e-10],["R062",0.620e-6,0.140e-6],["W146",1.4635e-6,0.5365e-6]] #filters that overlap with a 532 nm laser
-tensixtyfour = [["W146",1.4635e-6,0.5365e-6]] # None of the ground based bands I have currently overlap with 1064 nm laser aside perhaps from the wings of J. Maybe some sort of Y?
+tensixtyfour = [["Y106",1.05950e-6,0.1325e-6],["W146",1.4635e-6,0.5365e-6]] # None of the ground based bands I have currently overlap with 1064 nm laser aside perhaps from the wings of J. Maybe some sort of Y?
 fourfortyfive = [["B",4361e-10,890e-10],["V",5448e-10,840e-10],["g'",4639e-10,1280e-10]]
 sixthirtyeight = [["V",5448e-10,840e-10],["R",6407e-10,1580e-10],["r'",6122e-10,1150e-10],["i'",7439e-10,1230e-10],["R062",0.620e-6,0.140e-6]]
 sixeighty = [["R",6407e-10,1580e-10],["I",7980e-10,1540e-10],["r'",6122e-10,1150e-10],["i'",7439e-10,1230e-10],["R062",0.620e-6,0.140e-6]]
