@@ -69,7 +69,7 @@ tensixtyfour = [["W146",1.4635e-6,0.5365e-6]] # None of the ground based bands I
 fourfortyfive = [["B",4361e-10,890e-10],["V",5448e-10,840e-10],["g'",4639e-10,1280e-10]]
 sixthirtyeight = [["V",5448e-10,840e-10],["R",6407e-10,1580e-10],["r'",6122e-10,1150e-10],["i'",7439e-10,1230e-10],["R062",0.620e-6,0.140e-6]]
 sixeighty = [["R",6407e-10,1580e-10],["I",7980e-10,1540e-10],["r'",6122e-10,1150e-10],["i'",7439e-10,1230e-10],["R062",0.620e-6,0.140e-6]]
-eightoheight = [["I",7980e-10,1540e-10],["i'",7439e-10,1230e-10],["z'",8896e-10,1070e-10],["F184",1.8415e-6,0.1585e-6]]
+eightoheight = [["I",7980e-10,1540e-10],["i'",7439e-10,1230e-10],["z'",8896e-10,1070e-10]]
 dispersion = [4*np.pi,np.pi,1e-6] #angle of dispersion in steradians
 
 for Teff in Teffs:
