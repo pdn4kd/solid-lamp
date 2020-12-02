@@ -23,5 +23,10 @@ Current detector bands are: Johnson UBVRI, SDSS ugriz, 2MASS JHK, and WFIRST WFI
 
 As of 2020-11-24, mag_graphs5.py expands this to 3 blackbodies (2700 K, 3000 K, 6500 K) to compare with typical LED sources that simulate them, as well as replacing f_λ with photons/m²/s. This risks giving innacurate impressions, since you're not getting a true 6500 K blackbody without looking at a star!
 
+As of 2020-12-01, mag_graphs6.py replaces F_λ values with photons/m²/s ones.
+
+
+wavelength_ranges.py looks for overlaps in the various filter systems that we're considering.
+
 # Comparison with physical sources
 Incandecent bulbs are more or less comparable to blackbodies over a large range. LED sources (eg: Gamma Scientific SpectralLED RS-7-1 can fake it over a somewhat narrower range. In particular, it focuses on 380 to 1000 nm, which may present issues with eg: Johnson U band, and 2MASS JHK. This source is also insufficiently rugged for spacecraft operations, and has a bunch of precision angular limitations that would have to be considered.
